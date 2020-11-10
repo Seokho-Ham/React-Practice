@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      //html 태그를 하나 만드는 작업.
+      const e= React.createElement;
+      //Like Button component
+      class LikeButton extends React.Component{
+        //생성자 메서드. 최소 실행 된다.
+        constructor(props){
+          super(props)
+        }
+        render(){
+          return 
+            e('button', null, 'Like');  //<button> Like </button> 이 만들어진다.
+        }
+      }
+    </script>
+    <script>
+      //컴포넌트를 root라는 div 안에 렌더링 하는 작업.
+      ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+    </script>
+  </body>
+</html>
