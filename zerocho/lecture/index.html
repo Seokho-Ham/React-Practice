@@ -34,8 +34,25 @@
       }
     </script>
     <script type="text/babel">
+      class App extends React.Component{
+        constructor(props){
+          super(props);
+        }
+        render(){
+          return (
+            <div >
+            <LikeButton />
+            <LikeButton />
+            <LikeButton />
+            <LikeButton />
+            </div>
+          )
+        }
+      }
+    </script>
+    <script type="text/babel">
       //컴포넌트를 root라는 div 안에 렌더링 하는 작업.
-      ReactDOM.render(<LikeButton />, document.querySelector('#root'));
+      ReactDOM.render(<App />, document.querySelector('#root'));
     </script>
   </body>
 </html>
