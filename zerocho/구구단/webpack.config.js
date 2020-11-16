@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   name: 'gugudan-setting',
   mode: 'development',
@@ -6,7 +7,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   entry: {
-    app: ['./components/Gugudan.jsx'],
+    app: ['./components/client.jsx'],
   },
   module: {
     rules: [
