@@ -1,0 +1,24 @@
+{
+  "name": "chap01",
+  "version": "1.0.0",
+  "description": "- 쪼개진 js파일을 html에서 읽어서 사용할 수 있는 파일로 합쳐주는 역할.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
