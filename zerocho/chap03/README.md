@@ -27,3 +27,26 @@
   why? -> 함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정되기 때문에.
   일반함수는 호출 시 동적으로 this가 변하지만 화살표 함수는 항상 상위 스코프의 this를 가리킨다.
 - 그냥 함수로 선언하는 경우, constructor에서 this바인딩을 해줄 것.
+
+### shouldComponentUpdate
+
+- setState를 호출하면 무조건 리렌더링이 된다.
+- 이 함수를 통해 렌더링 되는 조건을 true, false를 리턴하는 방식으로 만들어줘야한다.
+
+```jsx
+shouldComponentUpdate(nextProps, nextState, nextContext){
+  if(this.state.counter!==nextState.counter){
+    return true;
+  }
+  return false;
+}
+```
+
+### PureComponent
+
+- extends PureComponent를 사용하면 shouldComponentUpdate를 알아서 구현한 컴포넌트로 생성된다.
+- 객체, 혹은 배열등의 참조구조를 가진 state까지는 완벽하게 해주지 못한다.(아예 새로운 배열, 객체를 만들어줘야 캐치한다.)
+
+#### React.memo
+
+- hooks에서 shouldComponentUpdate랑 같은 효과

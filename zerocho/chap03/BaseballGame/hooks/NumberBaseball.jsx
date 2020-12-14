@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Try from './Try';
 function getNumbers() {
   const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
