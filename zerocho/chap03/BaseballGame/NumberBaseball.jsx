@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import Try from './Try';
 function getNumbers() {
   const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -17,6 +17,7 @@ class NumberBaseball extends Component {
     answer: getNumbers(),
     tries: [],
   };
+  inputRef = createRef();
 
   onSubmitForm = e => {
     e.preventDefault();
@@ -50,6 +51,7 @@ class NumberBaseball extends Component {
           }
         }
         this.setState({
+          value: '',
           tries: [
             ...this.state.tries,
             {
@@ -60,19 +62,23 @@ class NumberBaseball extends Component {
         });
       }
     }
+    this.inputRef.current.focus();
   };
   onChangeInput = e => {
     this.setState({
       value: e.target.value,
     });
   };
-
+  // useRef = c => {
+  //   this.input = c;
+  // };
   render() {
     return (
       <>
         <h1>{this.state.result}</h1>
         <form onSubmit={this.onSubmitForm}>
           <input
+            ref={this.inputRef}
             type='text'
             maxLength={4}
             value={this.state.value}

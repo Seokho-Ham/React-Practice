@@ -50,3 +50,14 @@ shouldComponentUpdate(nextProps, nextState, nextContext){
 #### React.memo
 
 - hooks에서 shouldComponentUpdate랑 같은 효과
+
+### React.creatRef
+
+- ref 속성 설정할때 사용.
+- 그냥 함수로 할때는 다른 동작들을 자유롭게 추가할 수 있다는 장점이 있다.
+
+```jsx
+inputRef = createRef();
+this.inputRef.current.focus();
+<input ref={inputRef}>
+```

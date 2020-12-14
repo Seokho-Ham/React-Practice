@@ -15,6 +15,7 @@ const NumberBaseball = () => {
   const [value, setValue] = React.useState('');
   const [answer, setAnswer] = React.useState(getNumbers());
   const [tries, setTries] = React.useState([]);
+  const inputEl = React.useRef(null);
 
   const onSubmitForm = e => {
     e.preventDefault();
@@ -49,6 +50,7 @@ const NumberBaseball = () => {
         setValue('');
       }
     }
+    inputEl.current.focus();
   };
   const onChangeInput = e => {
     setValue(e.target.value);
@@ -59,6 +61,7 @@ const NumberBaseball = () => {
       <h1>{result}</h1>
       <form onSubmit={onSubmitForm}>
         <input
+          ref={inputEl}
           type='text'
           maxLength={4}
           value={value}
